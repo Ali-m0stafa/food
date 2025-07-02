@@ -1,0 +1,748 @@
+*{
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: rgb(44, 44, 44);
+    color: whitesmoke;
+    height: 4000px;
+}
+
+
+/* =================================================================== */
+/* ==============================  NAV   ===================================== */
+
+
+.nav{
+display: flex;
+align-items: center;
+justify-content: space-around;
+height: auto;
+position: fixed;
+z-index: 99999;
+width: 100%;
+/* From https://css.glass */
+box-shadow: 0px 0px 40px 1px rgb(255, 255, 255);
+backdrop-filter: blur(10.6px);
+-webkit-backdrop-filter: blur(10.6px);
+border-bottom: 1px solid rgba(255, 255, 255, 1);
+/* background: linear-gradient(180deg,#0000006d,#00000028,#00000015,rgba(0, 0, 0, 0)); */
+background: linear-gradient(180deg,#ffffffc4,#ffffff6c,#ffffff15,rgba(255, 255, 255, 0.035));
+
+
+}
+ 
+.lift img{
+width: 6.5vw;
+object-fit: cover;
+margin-top: 0.2rem;
+padding: 5px 0px;
+
+}
+
+.lift{
+display: flex;
+width: 14vw;
+border: solid rgb(0, 0, 0) 0.5px;
+border-radius: 100px 100px 100px 100px;
+justify-content: center;
+margin: 0.4rem 0rem;
+
+}
+
+.mid{
+display: flex;
+list-style: none;
+gap: 3vw;
+
+}
+
+.mid a{
+text-decoration: none;
+color: black;
+font-size: 25px;
+}
+
+
+.right{
+    display: flex;
+    gap: 2vw;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* =================================================================== */
+/* =================================================================== */
+
+.CONT{
+position: relative;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+border: solid red 3px;
+}
+
+.hide{
+position: relative;
+display: flex;
+overflow: hidden;
+width: 80%;
+top: 100px;
+gap: 10px;
+/* border: solid rgb(73, 1, 1) 1px; */
+
+}
+
+.card{
+position: relative;
+margin: 0rem 1rem;
+/* border: solid rgb(73, 1, 1) 1px; */
+padding: 30px;
+animation: move ease-in-out 30s  infinite;
+min-height: 200px;
+scroll-behavior: smooth;
+width: 100%;
+}
+
+.card img{
+max-width: 180px;
+padding-bottom: 20px;
+height: auto;
+}
+
+.card p:nth-child(3){
+    padding: 10px 0px;
+}
+
+.card h5{
+    width: 9rem;
+}
+
+@keyframes move{
+0%{
+    transform: translateX(0%);
+}
+
+19%{
+    transform: translateX(-120%);
+}
+
+34%{
+    transform: translateX(-240%);
+}
+
+49%{
+    transform: translateX(-360%);
+}
+
+64%{
+    transform: translateX(-480%);
+}
+
+79%{
+    transform: translateX(-600%);
+}
+
+100%{
+    transform: translateX(-720%);
+}
+}
+
+.border::after{
+content: '';
+display: block;
+position: absolute;
+width: 180px;
+height: 180px;
+border: dotted rgb(255, 0, 0) 5px;
+justify-content: center;
+border-radius: 50%;
+animation: moove 7s linear infinite;
+top: 7%;
+right: 16%;
+}
+
+@keyframes moove{
+from{
+    transform: rotate(0deg);
+}
+to{
+    transform: rotate(360deg);
+ 
+}
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+==========================================================================
+========================================================================== */
+
+.cont2{
+    position: relative;
+    border:  solid rgb(0, 178, 249) 5px;
+    margin: 5% 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cardF{
+border:  solid rgb(1, 164, 229) 3px;
+margin: 0.5rem;
+width: 30%;
+min-width: 250px;
+max-width: 400px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-size: cover;
+background-position: center;
+border-radius: 20px;
+}
+
+.bgpng{
+    position: absolute;
+    width: 20%;
+    height: 30%;
+    background-image: url(/icon/fish.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.2; /* هنا الشفافية */
+    z-index: -10;
+    justify-content: center;
+    border: solid red 2px;
+}
+
+.Toup,
+.Todown{
+    object-fit: cover;
+    width: 100%;
+    transition: 0.5s ;
+    border-radius: 20px 20px 0px 00px;
+}
+
+ .Todown{
+    transform: rotate(180deg);
+}
+
+.cardF:hover .Todown{
+    opacity: 0;
+    transform: translatex(100px)rotate(180deg);
+}
+
+.cardF:hover .Toup{
+    opacity: 0;
+    transform: translatex(-100px);
+}
+
+.cardF:hover .iconn{
+    opacity: 0;
+}
+
+.cardF:hover .memufish,
+.cardF:hover .textF{
+    opacity: 1;
+    }
+
+
+.iconn{
+width: 220px;
+height: 220px;
+position: absolute;
+animation: ro 6s linear infinite;
+transition: 0.4s ;
+
+}
+     @keyframes ro{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+     
+    }
+     } 
+
+    .textF{
+        position: absolute;
+        /* z-index: -9; */
+        width: 40%;
+        text-align: center;
+        line-height: 1.8;
+        opacity: 0;
+        transition: 0.8s ease-in-out;
+    }
+
+    .masterS{
+        display: block;
+        font-size: 2rem;
+    }
+
+    .memufish{
+        opacity: 0;
+        position: absolute;
+        top: 80%;
+        transition: 0.3s ease-in-out;
+        color: rgb(255, 255, 255);
+    text-decoration: none;
+    background: rgb(1, 164, 229);
+    padding: 10px;
+    } 
+       /* .iconndiv::after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: dotted red 5px;
+    justify-content: center;
+    border-radius: 50%;
+    animation: moove 10s ease-in-out infinite;
+    } */
+    /* ====================================================
+    ====================================================
+    ==================================================== */
+    .conta {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content:space-around;
+        border: solid red 9px;
+      }
+      
+      .carda {
+        position: relative;
+        display: flex;
+        max-width: 380px;
+        max-height: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+        flex-direction: row;
+        align-items: center;
+        border: solid rgb(0, 166, 255) 3px;
+        margin: 1rem 0;
+        
+      }
+
+
+      .sizeF{
+        display: flex;
+        position: relative;
+        object-fit: cover;
+        width: 100%;
+        z-index: 10;
+
+      }
+
+
+    .iconfood{
+        display: flex;
+        position: absolute;
+        width: 40%;
+        object-fit: cover;
+        transition: 0.4s ;
+        animation: ro 3s linear infinite;
+        z-index: 10;
+        top: 20%;        
+        right: 30%;
+    }
+
+
+
+    .bord::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 135px;
+        height: 135px;
+        border: dashed rgb(0, 166, 255) 3px;
+        justify-content: center;
+        border-radius: 50%;
+        animation: moove 8s linear infinite;
+        transition: 0.4s ;
+        z-index: 999;
+        top: 22%;
+        right: 31.7%;
+        }
+
+        .carda:hover .bord{
+            opacity: 0;
+
+        }
+
+    .card-content{
+        position: absolute;
+
+    }
+
+    .carda:hover .bg-top{
+        opacity: 0;
+        transform: translatex(-100px);
+    }
+    
+    .carda:hover .bg-bottom{
+        opacity: 0;
+        transform: translatex(100px)rotate(180deg);
+    }
+    
+    .carda:hover .iconfood{
+        opacity: 0;
+    }
+
+    .carda:hover .cta{
+        z-index: 11;
+
+    }
+
+    .carda:hover .card-content{
+        opacity: 1;
+        }
+
+    .bg-bottom{
+        transform: rotate(180deg);
+        transition: 0.5s ;
+    }
+
+    .bg-top{
+        transition: 0.5s ;
+
+    }
+    
+
+.iconaa{
+    position: absolute;
+    width: 60%;
+    z-index: -10;
+}
+ 
+.card-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s ease-in-out;
+
+}
+
+.card-content img{
+    object-fit: cover;
+    width: 90%;
+    opacity: 0.2;
+    
+}
+
+.card-content h2{
+position: relative;
+font-size: 2vw;
+padding-bottom: 1vh;
+margin-top: 1vh;
+z-index: 1000;
+
+}
+
+.card-content p{
+    position: relative;
+    margin: 0 2vw;
+    line-height: 1.8;
+    z-index: 1000;
+}
+
+.cta{
+display: flex;
+text-decoration: none;
+color: aliceblue;
+background-color: rgb(0, 161, 161);
+padding: 3% 2%;
+margin: auto 0px;
+
+}
+/* =========================================sec4================================== */
+
+
+
+.conta4{
+display: flex;
+flex-wrap:wrap;
+border: solid rgb(255, 225, 0) 5px;
+flex-direction:row;
+justify-content: space-between;
+background-color: rgb(41, 41, 41);
+}
+
+
+.lift-con4{
+display: flex;
+justify-content: end;
+align-items: center;
+}
+
+.right-con4{
+    display: flex;
+    align-items: center;
+
+}
+
+.mid-con4{
+    display: flex;
+    width: 38%;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.lift-con4 .bglift{
+width: 30vw;
+height: 50vh;
+object-fit: cover;
+border-radius: 0% 50% 50% 0%;
+filter: blur(1.2px);
+}
+
+
+.conta4F{
+
+    width: 23vw;
+    height: 30vh;
+    object-fit: cover;
+        position: absolute;
+        z-index: 999;
+        animation: ro 10s linear infinite;
+
+}
+
+
+.right-con4 .bgright{
+    width:30vw;
+    height: 50vh;
+    object-fit: cover;
+    border-radius: 0% 50% 50% 0%;
+    transform:scaleX(-1);
+    filter: blur(1.2px);
+
+    }
+    
+    
+    .pngF{
+        position: absolute;
+        width: 23vw;
+        height: 30vh;
+        object-fit: cover;
+        z-index: 999;
+        animation: ro 10s linear infinite;
+
+    }
+    
+    
+
+    .mid-con4 p{
+        position: relative;
+        padding: 1rem;
+        color: rgb(255, 255, 255);
+        width: 25rem;
+    }
+
+    /* <!-- =========================================sec5=================================== --> */
+
+/* .sec5{
+display: flex;
+width: 96vw;
+height: 60vh;
+border: solid yellowgreen 5px;
+margin: 1rem;
+
+}
+
+.sliderBG,.sliderBG2{
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+
+.sliderBG img{
+position:absolute;
+object-fit: cover;
+width: 100%;
+z-index: -999;
+left:2vw;
+}
+
+.contentS5{
+display: flex;
+flex-direction: row;
+border: solid rgb(255, 225, 0) 5px;
+width: 100vw;
+justify-content: space-between;
+flex-wrap: nowrap;
+}
+
+.slider-content{
+display: flex;
+flex-direction: column;
+height: 30vh;
+justify-content: center;
+padding: 5rem 0rem;
+}
+
+.contentS5 img{
+    width: 40vw;
+    object-fit: cover;
+
+}
+
+.slider-content button{
+width: 20vw;
+
+}
+
+.cardS{
+    display: flex;
+} */
+.box {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    margin: 50px auto;
+    overflow: hidden;
+    box-shadow: 2px 2px 80px 10px rgb(202, 202, 202);
+    border-radius: 8px;
+}
+
+.thei img{
+object-fit: cover;
+position: absolute;
+width:100vw ;
+height: 80vh;
+z-index: -999;
+cursor: default;
+}
+
+/* 
+#imgonee{
+    position: relative;
+    width: 40vw;
+    object-fit: cover;
+    top: 25%;
+} */
+
+
+.box {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;  
+    height: 100vh;
+    margin: 0px auto;
+    overflow: hidden;
+    box-shadow: 2px 2px 80px 10px rgb(202, 202, 202);
+    border-radius: 8px;
+    background-image: url(/img/mianS-blur.jpg);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.holder-img {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.button-holder {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.button-holder button {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px 15px;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+.button-holder button:hover{
+    background-color: black;
+}
+
+.slide-link {
+    min-width: 100%; 
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 2rem;
+font-size: 50px;
+margin-left: 4%;
+color: white;
+}
+
+.content p{
+
+    font-size: 30px;
+
+
+}
+
+.content button{
+width: 15vw;
+}
+
+
+.Cfors3{
+
+    width: 55vw;
+
+}
+
+.imgs1{
+    animation: slow 2s ease;
+}
+
+@keyframes slow{
+   0%{
+        transform: translateX(200px);
+        opacity: 0;
+
+    }
+   100%{
+        transform: translateX(0px);
+        opacity: 1;
+
+    }
+    
+}
+
